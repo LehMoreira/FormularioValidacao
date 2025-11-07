@@ -10,7 +10,6 @@
 <body>
     <h1>Cadastro</h1>
     <form id="formCadastro" action="">
-        <!--Menu fixo-->
         <label for="nome">Nome Completo:</label>
         <input type="text" class="entrada-texto" id="nome" placeholder="Digite seu nome">
         
@@ -23,7 +22,6 @@
             <option value="freel">Freelancer</option>
         </select>
 
-        <!-- Modal CLT -->
         <dialog id="modalCLT" class="modals">
             <label for="dataNascimento">Data Nascimento:</label>
             <input type="date" class="dataNascimento entrada-textoCLT" name="dataNascimento">
@@ -95,7 +93,7 @@
                 </select>
             </fieldset>
             <fieldset>
-                <legend>Contato</legend>
+                <legend>Contato(menor de 18: responsável legal)</legend>
                 <label for="email">E-mail</label>
                 <input type="email" class="email entrada-textoCLT">
 
@@ -108,13 +106,13 @@
                 <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
                 <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
                 <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                <label><input type="checkbox" name="turno" value="flexivel" id="flexivel"> Flexivel</label>
                 <label for="descricaoVaga">Descreva sua experiência:</label>
                 <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoCLT"></textarea>
             </fieldset>
             <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
 
-        <!-- Modal PJ -->
         <dialog id="modalPJ" class="modals">
             <label for="dataNascimento">Data Nascimento:</label>
             <input type="date" class="dataNascimento entrada-textoPJ" name="dataNascimento">
@@ -193,7 +191,6 @@
             <button type="submit" >Cadastrar</button>
         </dialog>
 
-        <!-- Modal JA -->
         <dialog id="modalJA" class="modals">
             <label for="dataNascimento">Data Nascimento:</label>
             <input type="date" id="dataNascimento" name="dataNascimento">
@@ -254,7 +251,7 @@
                 </select>
             </fieldset>
             <fieldset>
-                <legend>Contato</legend>
+                <legend>Contato(menor de 18: responsável legal)</legend>
                 <label for="email">E-mail</label>
                 <input type="email" class="email entrada-textoJA">
 
@@ -267,13 +264,13 @@
                 <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
                 <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
                 <label><input type="checkbox" name="turno" value="noite" id="noite"> Noite</label>
+                <label><input type="checkbox" name="turno" value="flexivel" id="flexivel"> Flexivel</label>
                 <label for="descricaoVaga">Descreva sua experiência:</label>
                 <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoJA"></textarea>
             </fieldset>
             <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
 
-        <!-- Modal Freel -->
         <dialog id="modalFreel" class="modals">
             <label for="dataNascimento">Data Nascimento:</label>
             <input type="date" class="dataNascimento" name="dataNascimento">
@@ -349,6 +346,7 @@
                 <label><input type="checkbox" name="turno" value="manha" id="manha"> Manhã</label><br>
                 <label><input type="checkbox" name="turno" value="tarde" id="tarde"> Tarde</label><br>
                 <label><input type="checkbox" name="turno" value="noite" > Noite</label>
+                <label><input type="checkbox" name="turno" value="flexivel" id="flexivel"> Flexivel</label><br>
                 <label for="descricaoVaga">Descreva sua experiência:</label>
                 <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoFree"></textarea>
             </fieldset>

@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background-color: #f4f5f7;
+    background: #0e0e10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,13 +18,12 @@ body {
 
 /* --- FORM PRINCIPAL --- */
 form {
-    background: #fff;
+    background: #1a1a1d;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     width: 800px;
     max-width: 90%;
-    transition: transform 0.2s ease;
+    backdrop-filter: blur(14px);
 }
 
 
@@ -33,15 +32,17 @@ h1 {
     margin-bottom: 25px;
     font-size: 1.75rem;
     font-weight: 600;
-    color: #2b2d42;
+    color: #8f741b;
     letter-spacing: 0.3px;
     text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
 
 label {
     display: block;
     font-weight: 600;
+    color: #8f741b;
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -50,13 +51,18 @@ input, select, textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
+    background-color: #111113;
+    color: #f5f5f5;
     border-radius: 6px;
     font-size: 14px;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+
+
+
 fieldset {
-    border: 1px solid #ccc;
+    border: 1px solid #f5f5f5;
     border-radius: 8px;
     padding: 15px 20px;
     margin-top: 20px;
@@ -64,7 +70,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #333;
+    color: #8f741b;
 }
 
 /* --- ESTILO DOS MODAIS COMO PARTE DO FORM --- */
@@ -108,6 +114,7 @@ legend {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color:  #ccc;
     width: 18%;
     font-weight: normal;
     margin: 0;
@@ -133,6 +140,7 @@ legend {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    color:  #ccc;
     width: 20%;
     font-weight: normal;
     margin: 0;
@@ -150,13 +158,14 @@ legend {
   width: 100%;
   padding: 12px 0;
   margin-top: 20px;
-  background: #2b2d42;
-  color: #fff;
+  background: linear-gradient(90deg, #8f741b, #f5c542);
+  color: #000000;
   border: none;
   border-radius: 8px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
 }
 
 /* --- Responsividade --- */

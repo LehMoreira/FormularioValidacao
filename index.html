@@ -116,19 +116,90 @@
 
         <!-- Modal PJ -->
         <dialog id="modalPJ" class="modals">
+            <label for="dataNascimento">Data Nascimento:</label>
+            <input type="date" class="dataNascimento entrada-textoPJ" name="dataNascimento">
             <label for="cnpj">CNPJ</label>
             <input type="text" id="cnpj" maxlength="18">
+            <label for="escolaridade">Escolaridade</label>
+            <select class="escolaridade">
+                <option value="invalida">Selecione</option>
+                <option value="medio">Ensino médio Completo</option>
+                <option value="tecnico">Técnico</option>
+                <option value="superiorIn">Ensino Superior em andamento</option>
+                <option value="superior">Ensino Superior Completo</option>
+            </select>
+            <fieldset>
+                <legend>Endereço:</legend>
+                <label for="cep" >CEP</label>
+                <input type="text" class="cep entrada-textoPJ" maxlength="9">
 
-            <button type="submit" id="cadastrar">Cadastrar</button>
+                <label for="rua">Rua</label>
+                <input type="text" class="entrada-textoPJ">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" class="entrada-textoPJ">
+
+                <label for="numero">Número</label>
+                <input type="number" class="numero entrada-textoPJ">
+
+                <label for="cidade">Cidade</label>
+                <input type="text" class="entrada-textoPJ">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="entrada-textoPJ">
+
+                <label for="uf">UF</label>
+                <select class="uf">
+                    <option value="invalida">UF</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Contato</legend>
+                <label for="email">E-mail</label>
+                <input type="email" class="email entrada-textoPJ">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="telefone entrada-textoPJ" maxlength="16">
+            </fieldset>
+            
+            <label for="descricaoVaga">Descreva sua experiência:</label>
+            <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoPJ"></textarea>
+            
+            <button type="submit" >Cadastrar</button>
         </dialog>
 
         <!-- Modal JA -->
         <dialog id="modalJA" class="modals">
-            <label for="dataNascimentoJA">Data Nascimento:</label>
-            <input type="date" id="dataNascimentoJA" name="dataNascimentoJA">
+            <label for="dataNascimento">Data Nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento">
             <label for="cpf">CPF</label>
-            <input type="text" class="cpf" maxlength="14" placeholder="Digite seu CPF">
-            <select id="escolaridade" class="entrada-textoCLT">
+            <input type="text" class="cpf entrada-textoJA" maxlength="14" placeholder="Digite seu CPF">
+            <select id="escolaridade">
                 <option value="invalida">Selecione</option>
                 <option value="medio">Ensino médio Completo</option>
                 <option value="medioIn">Ensino médio em andamento</option>
@@ -138,7 +209,7 @@
             <fieldset>
                 <legend>Endereço:</legend>
                 <label for="cep" >CEP</label>
-                <input type="text" class="cep" maxlength="9">
+                <input type="text" class="cep entrada-textoJA" maxlength="9">
 
                 <label for="rua">Rua</label>
                 <input type="text" class="entrada-textoJA">
@@ -185,10 +256,10 @@
             <fieldset>
                 <legend>Contato</legend>
                 <label for="email">E-mail</label>
-                <input type="email" class="email">
+                <input type="email" class="email entrada-textoJA">
 
                 <label for="telefone">Telefone</label>
-                <input type="tel" class="telefone" maxlength="16">
+                <input type="tel" class="telefone entrada-textoJA" maxlength="16">
             </fieldset>
             <fieldset>
                 <legend>Perfil da vaga</legend>
@@ -207,7 +278,7 @@
             <label for="dataNascimento">Data Nascimento:</label>
             <input type="date" class="dataNascimento" name="dataNascimento">
             <label for="cpf">CPF</label>
-            <input type="text" class="cpf" maxlength="14" placeholder="Digite seu CPF">
+            <input type="text" class="cpf entrada-textoFree" maxlength="14" placeholder="Digite seu CPF">
             <label for="escolaridade">Grau de escolaridade:</label>
             <select id="escolaridade">
                 <option value="invalida">Selecione</option>
@@ -220,7 +291,7 @@
             <fieldset>
                 <legend>Endereço:</legend>
                 <label for="cep" >CEP</label>
-                <input type="text" class="cep" maxlength="9">
+                <input type="text" class="cep entrada-textoFree" maxlength="9">
 
                 <label for="rua">Rua</label>
                 <input type="text" class="entrada-textoFree">
@@ -267,10 +338,10 @@
             <fieldset>
                 <legend>Contato</legend>
                 <label for="email">E-mail</label>
-                <input type="email" class="email">
+                <input type="email" class="email entrada-textoFree">
 
                 <label for="telefone">Telefone</label>
-                <input type="tel" class="telefone" maxlength="16">
+                <input type="tel" class="telefone entrada-textoFree" maxlength="16">
             </fieldset>
             <fieldset>
                 <legend>Perfil da vaga</legend>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form id="formCadastro" action="">
+        <!--Menu fixo-->
+        <label for="nome">Nome Completo:</label>
+        <input type="text" class="entrada-texto" id="nome" placeholder="Digite seu nome">
+        
+        <label for="tipoContrato">Tipo de Contratação</label>
+        <select id="tipoContrato">
+            <option value="">Selecione</option>
+            <option value="clt">CLT</option>
+            <option value="pj">PJ</option>
+            <option value="ja">Jovem Aprendiz</option>
+            <option value="freel">Freelancer</option>
+        </select>
+
+        <!-- Modal CLT -->
+        <dialog id="modalCLT" class="modals">
+            <label for="dataNascimento">Data Nascimento:</label>
+            <input type="date" class="dataNascimento entrada-textoCLT" name="dataNascimento">
+            <label for="cpf">CPF</label>
+            <input type="text" class="cpf entrada-textoCLT" maxlength="14" placeholder="Digite seu CPF">
+            <label for="escolaridade">Escolaridade</label>
+            <select class="escolaridade">
+                <option value="invalida">Selecione</option>
+                <option value="medio">Ensino médio Completo</option>
+                <option value="tecnico">Técnico</option>
+                <option value="superiorIn">Ensino Superior em andamento</option>
+                <option value="superior">Ensino Superior Completo</option>
+            </select>
+            <label for="cargo">Cargo:</label>
+            <label><input type="radio" name="cargo" value="estagiario"> Estagiário</label><br>
+            <label><input type="radio" name="cargo" value="tr"> Traineer</label><br>
+            <label><input type="radio" name="cargo" value="jr"> Júnior</label>
+            <label><input type="radio" name="cargo" value="pl"> Pleno</label><br>
+            <label><input type="radio" name="cargo" value="sr"> Sênior</label>
+
+            <fieldset>
+                <legend>Endereço:</legend>
+                <label for="cep" >CEP</label>
+                <input type="text" class="cep entrada-textoCLT" maxlength="9">
+
+                <label for="rua">Rua</label>
+                <input type="text" class="entrada-textoCLT">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" class="entrada-textoCLT">
+
+                <label for="numero">Número</label>
+                <input type="number" class="numero entrada-textoCLT">
+
+                <label for="cidade">Cidade</label>
+                <input type="text" class="entrada-textoCLT">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="entrada-textoCLT">
+
+                <label for="uf">UF</label>
+                <select class="uf">
+                    <option value="invalida">UF</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Contato</legend>
+                <label for="email">E-mail</label>
+                <input type="email" class="email entrada-textoCLT">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="telefone entrada-textoCLT" maxlength="16">
+            </fieldset>
+            <fieldset>
+                <legend>Perfil da vaga</legend>
+                <label for="turno">Turno:</label>
+                <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
+                <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
+                <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                <label for="descricaoVaga">Descreva sua experiência:</label>
+                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoCLT"></textarea>
+            </fieldset>
+            <button type="submit" id="cadastrar">Cadastrar</button>
+        </dialog>
+
+        <!-- Modal PJ -->
+        <dialog id="modalPJ" class="modals">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" id="cnpj" maxlength="18">
+
+            <button type="submit" id="cadastrar">Cadastrar</button>
+        </dialog>
+
+        <!-- Modal JA -->
+        <dialog id="modalJA" class="modals">
+            <label for="dataNascimentoJA">Data Nascimento:</label>
+            <input type="date" id="dataNascimentoJA" name="dataNascimentoJA">
+            <label for="cpf">CPF</label>
+            <input type="text" class="cpf" maxlength="14" placeholder="Digite seu CPF">
+            <select id="escolaridade" class="entrada-textoCLT">
+                <option value="invalida">Selecione</option>
+                <option value="medio">Ensino médio Completo</option>
+                <option value="medioIn">Ensino médio em andamento</option>
+                <option value="tecnico">Técnico</option>
+                <option value="superiorIn">Ensino Superior em andamento</option>
+            </select>
+            <fieldset>
+                <legend>Endereço:</legend>
+                <label for="cep" >CEP</label>
+                <input type="text" class="cep" maxlength="9">
+
+                <label for="rua">Rua</label>
+                <input type="text" class="entrada-textoJA">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" class="entrada-textoJA">
+
+                <label for="numero">Número</label>
+                <input type="number" class="numero">
+
+                <label for="cidade">Cidade</label>
+                <input type="text" class="entrada-textoJA">
+
+                <label for="uf">UF</label>
+                <select class="uf">
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Contato</legend>
+                <label for="email">E-mail</label>
+                <input type="email" class="email">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="telefone" maxlength="16">
+            </fieldset>
+            <fieldset>
+                <legend>Perfil da vaga</legend>
+                <label for="turno">Turno:</label>
+                <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
+                <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
+                <label><input type="checkbox" name="turno" value="noite" id="noite"> Noite</label>
+                <label for="descricaoVaga">Descreva sua experiência:</label>
+                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoJA"></textarea>
+            </fieldset>
+            <button type="submit" id="cadastrar">Cadastrar</button>
+        </dialog>
+
+        <!-- Modal Freel -->
+        <dialog id="modalFreel" class="modals">
+            <label for="dataNascimento">Data Nascimento:</label>
+            <input type="date" class="dataNascimento" name="dataNascimento">
+            <label for="cpf">CPF</label>
+            <input type="text" class="cpf" maxlength="14" placeholder="Digite seu CPF">
+            <label for="escolaridade">Grau de escolaridade:</label>
+            <select id="escolaridade">
+                <option value="invalida">Selecione</option>
+                <option value="medio">Ensino médio Completo</option>
+                <option value="tecnico">Técnico</option>
+                <option value="superiorIn">Ensino Superior em andamento</option>
+                <option value="superior">Ensino Superior Completo</option>
+            </select>
+
+            <fieldset>
+                <legend>Endereço:</legend>
+                <label for="cep" >CEP</label>
+                <input type="text" class="cep" maxlength="9">
+
+                <label for="rua">Rua</label>
+                <input type="text" class="entrada-textoFree">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" class="entrada-textoFree">
+
+                <label for="numero">Número</label>
+                <input type="number" class="numero">
+
+                <label for="cidade">Cidade</label>
+                <input type="text" class="entrada-textoFree">
+
+                <label for="uf">UF</label>
+                <select class="uf">
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Contato</legend>
+                <label for="email">E-mail</label>
+                <input type="email" class="email">
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="telefone" maxlength="16">
+            </fieldset>
+            <fieldset>
+                <legend>Perfil da vaga</legend>
+                <label for="turno">Turno:</label>
+                <label><input type="checkbox" name="turno" value="manha" id="manha"> Manhã</label><br>
+                <label><input type="checkbox" name="turno" value="tarde" id="tarde"> Tarde</label><br>
+                <label><input type="checkbox" name="turno" value="noite" > Noite</label>
+                <label for="descricaoVaga">Descreva sua experiência:</label>
+                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoFree"></textarea>
+            </fieldset>
+            <button type="submit" id="cadastrar">Cadastrar</button>
+        </dialog>
+    </form>
+
+    
+</body>
+
+</html>

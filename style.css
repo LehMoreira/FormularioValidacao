@@ -1,0 +1,114 @@
+/* --- RESET E BASE --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- FORM PRINCIPAL --- */
+form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    width: 450px;
+    max-width: 90%;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 14px;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+legend {
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- ESTILO DOS MODAIS COMO PARTE DO FORM --- */
+.modals {
+    display: none; /* escondido até o JS abrir */
+    position: static;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Quando o JS usa .show() no <dialog>, ele adiciona automaticamente o atributo [open] */
+.modals[open] {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Inputs dentro dos modais */
+.modals input,
+.modals select {
+    margin-bottom: 12px;
+}
+
+/* Botão de fechar (só aparece no JA, mas estilizado para consistência) */
+.btn-fechar {
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.btn-fechar:hover {
+    background-color: #b02a37;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 480px) {
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+}

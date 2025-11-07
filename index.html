@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Cadastro</h1>
+    <h1>Cadastro de Usuário</h1>
     <form id="formCadastro" action="">
         <!--Menu fixo-->
         <label for="nome">Nome Completo:</label>
@@ -38,11 +38,13 @@
                 <option value="superior">Ensino Superior Completo</option>
             </select>
             <label for="cargo">Cargo:</label>
-            <label><input type="radio" name="cargo" value="estagiario"> Estagiário</label><br>
-            <label><input type="radio" name="cargo" value="tr"> Traineer</label><br>
+            <div class="cargos">
+            <label><input type="radio" name="cargo" value="estagiario"> Estagiário</label>
+            <label><input type="radio" name="cargo" value="tr"> Trainee</label>
             <label><input type="radio" name="cargo" value="jr"> Júnior</label>
-            <label><input type="radio" name="cargo" value="pl"> Pleno</label><br>
+            <label><input type="radio" name="cargo" value="pl"> Pleno</label>
             <label><input type="radio" name="cargo" value="sr"> Sênior</label>
+            </div>
 
             <fieldset>
                 <legend>Endereço:</legend>
@@ -102,14 +104,16 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" class="telefone entrada-textoCLT" maxlength="16">
             </fieldset>
-            <fieldset>
-                <legend>Perfil da vaga</legend>
-                <label for="turno">Turno:</label>
-                <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
-                <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
-                <label><input type="checkbox" name="turno" value="noite"> Noite</label>
-                <label for="descricaoVaga">Descreva sua experiência:</label>
-                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoCLT"></textarea>
+            <fieldset class="perfil-vaga">
+                <legend>Perfil da vaga - CLT</legend>
+                <label for="turnoCLT">Turno:</label>
+                <div class="turnos">
+                    <label><input type="checkbox" name="turno" value="manha"> Manhã</label>
+                    <label><input type="checkbox" name="turno" value="tarde"> Tarde</label>
+                    <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                </div>
+                <label for="descricaoVagaCLT">Descreva sua experiência:</label>
+                <textarea name="descricaoVagaCLT" id="descricaoVagaCLT" class="entrada-textoFree" rows="6" cols="100"></textarea>
             </fieldset>
             <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
@@ -128,6 +132,14 @@
                 <option value="superiorIn">Ensino Superior em andamento</option>
                 <option value="superior">Ensino Superior Completo</option>
             </select>
+            <label for="cargo">Cargo:</label>
+            <div class="cargos">
+            <label><input type="radio" name="cargo" value="estagiario"> Estagiário</label>
+            <label><input type="radio" name="cargo" value="tr"> Trainee</label>
+            <label><input type="radio" name="cargo" value="jr"> Júnior</label>
+            <label><input type="radio" name="cargo" value="pl"> Pleno</label>
+            <label><input type="radio" name="cargo" value="sr"> Sênior</label>
+            </div>
             <fieldset>
                 <legend>Endereço:</legend>
                 <label for="cep" >CEP</label>
@@ -186,11 +198,18 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" class="telefone entrada-textoPJ" maxlength="16">
             </fieldset>
-            
-            <label for="descricaoVaga">Descreva sua experiência:</label>
-            <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoPJ"></textarea>
-            
-            <button type="submit" >Cadastrar</button>
+            <fieldset class="perfil-vaga">
+                <legend>Perfil da vaga - PJ</legend>
+                <label for="turnoPJ">Turno:</label>
+                <div class="turnos">
+                    <label><input type="checkbox" name="turno" value="manha"> Manhã</label>
+                    <label><input type="checkbox" name="turno" value="tarde"> Tarde</label>
+                    <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                </div>
+                <label for="descricaoVagaPJ">Descreva sua experiência:</label>
+                <textarea name="descricaoVagaPJ" id="descricaoVagaPJ" class="entrada-textoFree" rows="6" cols="100"></textarea>
+            </fieldset>
+            <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
 
         <!-- Modal JA -->
@@ -199,6 +218,7 @@
             <input type="date" id="dataNascimento" name="dataNascimento">
             <label for="cpf">CPF</label>
             <input type="text" class="cpf entrada-textoJA" maxlength="14" placeholder="Digite seu CPF">
+            <label for="escolaridade">Escolaridade</label>
             <select id="escolaridade">
                 <option value="invalida">Selecione</option>
                 <option value="medio">Ensino médio Completo</option>
@@ -261,14 +281,18 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" class="telefone entrada-textoJA" maxlength="16">
             </fieldset>
-            <fieldset>
-                <legend>Perfil da vaga</legend>
-                <label for="turno">Turno:</label>
-                <label><input type="checkbox" name="turno" value="manha"> Manhã</label><br>
-                <label><input type="checkbox" name="turno" value="tarde"> Tarde</label><br>
-                <label><input type="checkbox" name="turno" value="noite" id="noite"> Noite</label>
-                <label for="descricaoVaga">Descreva sua experiência:</label>
-                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoJA"></textarea>
+            <fieldset class="perfil-vaga">
+                <legend>Perfil da vaga - Jovem Aprendiz</legend>
+
+                <label for="turnoAprendiz">Turno:</label>
+                <div class="turnos">
+                    <label><input type="checkbox" name="turno" value="manha"> Manhã</label>
+                    <label><input type="checkbox" name="turno" value="tarde"> Tarde</label>
+                    <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                </div>
+
+                <label for="descricaoVagaAprendiz">Descreva sua experiência:</label>
+                <textarea name="descricaoVagaAprendiz" id="descricaoVagaAprendiz" class="entrada-textoFree" rows="6" cols="100"></textarea>
             </fieldset>
             <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
@@ -279,7 +303,7 @@
             <input type="date" class="dataNascimento" name="dataNascimento">
             <label for="cpf">CPF</label>
             <input type="text" class="cpf entrada-textoFree" maxlength="14" placeholder="Digite seu CPF">
-            <label for="escolaridade">Grau de escolaridade:</label>
+            <label for="escolaridade">Escolaridade:</label>
             <select id="escolaridade">
                 <option value="invalida">Selecione</option>
                 <option value="medio">Ensino médio Completo</option>
@@ -343,15 +367,18 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" class="telefone entrada-textoFree" maxlength="16">
             </fieldset>
-            <fieldset>
+            <fieldset class="perfil-vaga">
                 <legend>Perfil da vaga</legend>
                 <label for="turno">Turno:</label>
-                <label><input type="checkbox" name="turno" value="manha" id="manha"> Manhã</label><br>
-                <label><input type="checkbox" name="turno" value="tarde" id="tarde"> Tarde</label><br>
-                <label><input type="checkbox" name="turno" value="noite" > Noite</label>
+                <div class="turnos">
+                    <label><input type="checkbox" name="turno" value="manha"> Manhã</label>
+                    <label><input type="checkbox" name="turno" value="tarde"> Tarde</label>
+                    <label><input type="checkbox" name="turno" value="noite"> Noite</label>
+                </div>
                 <label for="descricaoVaga">Descreva sua experiência:</label>
-                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoFree"></textarea>
+                <textarea name="descricaoVaga" id="descricaoVaga" class="entrada-textoFree" rows="6" cols="100"></textarea>
             </fieldset>
+
             <button type="submit" id="cadastrar">Cadastrar</button>
         </dialog>
     </form>

@@ -1,64 +1,76 @@
-/* --- RESET E BASE --- */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f6f8;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #0e0e10;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
+    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    margin: 0;
+    padding: 40px;
+    color: #333;
 }
 
 /* --- FORM PRINCIPAL --- */
 form {
-    background: #ffffff;
-    padding: 25px;
+    background: #1a1a1d;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    width: 450px;
+    width: 800px;
     max-width: 90%;
-    transition: all 0.3s ease;
+    backdrop-filter: blur(14px);
 }
+
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #8f741b;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
+
 
 label {
     display: block;
     font-weight: 600;
-    margin-top: 14px;
-    color: #333;
+    color: #8f741b;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 10px;
-    margin-top: 6px;
-    border-radius: 6px;
     border: 1px solid #ccc;
+    background-color: #111113;
+    color: #f5f5f5;
+    border-radius: 6px;
     font-size: 14px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+
 
 
 fieldset {
-    border: 1px solid #ccc;
+    border: 1px solid #f5f5f5;
     border-radius: 8px;
-    padding: 15px;
-    margin-top: 15px;
+    padding: 15px 20px;
+    margin-top: 20px;
 }
 
 legend {
     font-weight: bold;
-    color: #333;
+    color: #8f741b;
 }
 
 /* --- ESTILO DOS MODAIS COMO PARTE DO FORM --- */
@@ -85,24 +97,75 @@ legend {
 /* Inputs dentro dos modais */
 .modals input,
 .modals select {
+    text-align: start;
     margin-bottom: 12px;
 }
 
-/* Botão de fechar (só aparece no JA, mas estilizado para consistência) */
-.btn-fechar {
-    margin-top: 15px;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s ease;
+/* --- Alinhamento dos rádios (campo Cargo) --- */
+.cargos {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.btn-fechar:hover {
-    background-color: #b02a37;
+.cargos label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:  #ccc;
+    width: 18%;
+    font-weight: normal;
+    margin: 0;
+}
+
+.cargos input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Perfil da vaga*/
+.perfil-vaga .turnos {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.perfil-vaga .turnos label {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color:  #ccc;
+    width: 20%;
+    font-weight: normal;
+    margin: 0;
+}
+
+.perfil-vaga input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Botão de cadastrar */
+#cadastrar {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #8f741b, #f5c542);
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
 }
 
 /* --- Responsividade --- */
